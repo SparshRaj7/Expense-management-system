@@ -9,8 +9,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "client-build": "npm run build --prefix client",
-    "dev": "concurrently \"npm start\" \"npm run client\" ",
-    "prod": "concurrently \"npm start\" \"npm run client-build\" "
+    "dev": "concurrently \"npm start\" \"npm run client\" "
   },
   "keywords": [],
   "author": "sparshraj",
