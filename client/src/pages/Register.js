@@ -13,7 +13,7 @@ const Register = () => {
     const submitHandler = async (values) => {
         try {
             setLoading(true);
-            await axios.post('https://expense-app-mern-z2w9.onrender.com/api/v1/users/register', values);
+            await axios.post('https://expense-management-mp9b.onrender.com/api/v1/users/register', values);
             message.success('Registration successfull');
             setLoading(false);
             navigate('/login');

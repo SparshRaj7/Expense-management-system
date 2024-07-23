@@ -63,7 +63,7 @@ const HomePage = () => {
     try {
       const user = JSON.parse(localStorage.getItem('user'));
       setLoading(true);
-      const res = await axios.post('https://expense-app-mern-z2w9.onrender.com/api/v1/transactions/getTransaction', {userid: user._id, frequency, selectedDate, type} );
+      const res = await axios.post('https://expense-management-mp9b.onrender.com/api/v1/transactions/getTransaction', {userid: user._id, frequency, selectedDate, type} );
       setLoading(false);
       setAllTransaction(res.data);
       console.log(res.data);
@@ -82,7 +82,7 @@ const HomePage = () => {
   const handleDelete = async (record) => {
     try {
       setLoading(true);
-      await axios.post('https://expense-app-mern-z2w9.onrender.com/api/v1/transactions/deleteTransaction', {transactionId: record._id});
+      await axios.post('https://expense-management-mp9b.onrender.com/api/v1/transactions/deleteTransaction', {transactionId: record._id});
       setLoading(false);
       message.success('Transaction Deleted!');
     } catch (error) {
@@ -98,11 +98,11 @@ const HomePage = () => {
       const user = JSON.parse(localStorage.getItem('user'));
       setLoading(true);
       if(editable){
-        await axios.post('https://expense-app-mern-z2w9.onrender.com/api/v1/transactions/editTransaction', {payload:{...values,userId:user._id},transactionId: editable._id});
+        await axios.post('https://expense-management-mp9b.onrender.com/api/v1/transactions/editTransaction', {payload:{...values,userId:user._id},transactionId: editable._id});
         setLoading(false);
         message.success('Transaction updated successfully');
       }else{
-        await axios.post('https://expense-app-mern-z2w9.onrender.com/api/v1/transactions/addTransaction', {...values, userid:user._id});
+        await axios.post('https://expense-management-mp9b.onrender.com/api/v1/transactions/addTransaction', {...values, userid:user._id});
         setLoading(false);
         message.success('Transaction added successfully');
       }

@@ -12,7 +12,7 @@ const Login = () => {
     const submitHandler = async (values) => {
         try {
             setLoading(true);
-            const {data} = await axios.post('https://expense-app-mern-z2w9.onrender.com/api/v1/users/login', values);
+            const {data} = await axios.post('https://expense-management-mp9b.onrender.com/api/v1/users/login', values);
             setLoading(false);
             message.success('Logged in successfully');
             localStorage.setItem('user',JSON.stringify({...data.user,password:''}));
